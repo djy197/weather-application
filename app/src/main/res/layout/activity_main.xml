@@ -10,6 +10,7 @@
     tools:context="mg.studio.weatherappdesign.MainActivity">
 
     <TextView
+        android:id="@+id/day_of_week"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -104,6 +105,18 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/small_button"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tv_temperature"
+                android:layout_toStartOf="@+id/tv_temperature"
+                android:background="@drawable/white_circle"
+                android:onClick="btnClick"
+                android:paddingLeft="1dp"
+                android:paddingRight="1dp" />
+
             <RelativeLayout
                 android:id="@+id/tv_temperature"
                 android:layout_width="match_parent"
@@ -177,7 +190,8 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="85dp"
+                android:background="@drawable/blue_circle"
                 android:gravity="center"
                 android:text="mon"
                 android:textAllCaps="true"
@@ -198,7 +212,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="85dp"
                 android:gravity="center"
                 android:text="tue"
                 android:textAllCaps="true"
@@ -219,7 +233,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="85dp"
                 android:gravity="center"
                 android:text="thu"
                 android:textAllCaps="true"
@@ -240,7 +254,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="85dp"
                 android:gravity="center"
                 android:text="fri"
                 android:textAllCaps="true"

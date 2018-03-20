@@ -14,6 +14,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -84,6 +86,18 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String temperature) {
             //Update the temperature displayed
             ((TextView) findViewById(R.id.temperature_of_the_day)).setText(temperature);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
+            String dayOfWeek=String.valueOf(calendar.get(Calendar.DAY_OF_WEEK));
+            int day=Integer.parseInt(dayOfWeek);
+            String[] weekDay={"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"," Saturday"};
+            String day_of_week=weekDay[day-1];
+            ((TextView) findViewById(R.id.day_of_week)).setText(day_of_week);
+            int tv_year=calendar.get(Calendar.YEAR);
+            int tv_mon=calendar.get(Calendar.MONTH)+1;
+            int tv_day=calendar.get(Calendar.DAY_OF_MONTH);
+            String tv_date=tv_mon+"/"+tv_day+"/"+tv_year;
+            ((TextView) findViewById(R.id.tv_date)).setText(tv_date);
         }
     }
 }
